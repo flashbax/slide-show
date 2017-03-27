@@ -1,27 +1,25 @@
 window.onload = function () { 
 "use strict";
 
+//create div element to go around images
 var div = document.createElement('div');
 div.style.width = '500px';
-div.style.height = '400px';
+div.style.height = '313px';
 div.style.border = '1px solid black';
-div.style.overflow = 'hidden';   
+div.style.overflow = 'hidden';  
+div.id = 'imgBox'; 
 
-var img = document.createElement('img');
+//make imgBox div a child of container
+document.getElementById("container").appendChild(div);
 
+//create array with number of images
 var imgs = [1, 2, 3, 4, 5];
 
-
-function getImg() { 
-var i; 
+var i;
 for (i=1; i<=imgs.length; i++) { 
-       
-     //console.log('<img src="img/' + i + '.jpg"/>'); 
-  }
-  //return '<img src="img/' + i + '.jpg"/>'
+  var path = "<img src=" + "img/" + i + ".jpg>";
+  document.getElementById("imgBox").innerHTML = path;
+  console.log(path);
 }
 
-
-document.getElementById("container").appendChild(div).innerHTML = imgs;
-
-};
+}; //window.onload end
